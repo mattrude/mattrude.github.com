@@ -29,6 +29,16 @@ h4 {font-size: 93%;}
 h5 {font-size: 85%;}
 h6 {font-size: 77%;}
 
+code, pre {
+	background: #F9F9F9;
+	border: 1px solid #E2E2E2;
+	color: black;
+	font-size: 12px;
+	line-height: 16px;
+	overflow: auto;
+	padding: 5px;
+}
+
 #header {background-image: url('images/header.png');}
 #container 
 {
