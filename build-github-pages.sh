@@ -19,6 +19,7 @@ do
     sed "/###TITLE###/c $PAGENAME" ../../header.txt > index.html && \
     sed -i "/# $PAGENAME/c <div id=\"title\"><h1>mattrude.github.com <i>&mdash; </i>$PAGENAME</h1></div><p><a href=\"/\">mattrude.github.com</a> / <strong>$PAGENAME</strong></p>" readme.md && \
     markdown readme.md >> index.html && \
+    cat ../../comments.txt >> index.html
     cat ../../footer.txt >> index.html
     rm -f favicon.ico && cp ../../favicon.ico .
     rm -f style.css && cp ../../style.css .
