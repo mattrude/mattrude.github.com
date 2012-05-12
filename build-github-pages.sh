@@ -30,3 +30,10 @@ do
 done
 cd ../
 rm -rf projects
+
+rm -rf index.html
+INDEXNAME=`grep "^# " index.md |sed 's/^# //g'`
+sed "/###TITLE###/c $PAGENAME" header.txt > index.html && \
+markdown index.md >> index.html && \
+cat footer.txt >> index.html
+git commit index.html -m "Webstie Update" && git push --all
