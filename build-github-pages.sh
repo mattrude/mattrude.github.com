@@ -30,7 +30,7 @@ do
     echo ""
 done
 cd ../
-rm -rf projects
+#rm -rf projects
 
 echo "------ mattrude.github.com ------"
 rm -rf index.html
