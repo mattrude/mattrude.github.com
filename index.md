@@ -10,7 +10,8 @@ You my also view [My Repository](http://github.com/mattrude) on [Github.com](htt
 
 * **[Webmaster Tools](/wp-plugin-webmaster-tools)** - A WordPress plugin that provides webmaster site verification scripts for Google, Yahoo, & Bing. Plugin also provides Google Analytics Tracking Script for registered sites. See Tools -> Webmaster Tools
 * **[Random Image Block](/random-image-block)** - A small plugin that will display a random image from your native WordPress photo galley or in-beaded images (repository).
-* **[wp-Gallery Image Block](/wp-gallery2-image-block)** - This plugin for WordPress will allow you to put one of the many Gallery2 Image Blocks on your WordPress site. You are required to have a running Gallery2 install to use this plugin (repository).
+* **[Sitemap Generator](/wp-plugin-sitemap-generator)** - Automatic generate standard XML sitemap (http://example.com/sitemap.xml) for WordPress that supports the providers including Google, Yahoo, MSN, Ask.com, and others.([repository](http://github.com/mattrude/wp-plugin-sitemap-generator))
+* **[wp-Gallery Image Block](/wp-gallery2-image-block)** - This plugin for WordPress will allow you to put one of the many Gallery2 Image Blocks on your WordPress site. You are required to have a running Gallery2 install to use this plugin ([repository](http://github.com/mattrude/wp-gallery2-image-block)).
 * **[wp-reCAPTCHA-Form](/wp-recaptcha-form)** - A simple plugin for your WordPress blog that enables you to have a contact form with the [reCAPTCHA](http://www.google.com/recaptcha) challenge system ([repository](http://github.com/mattrude/wp-recaptcha-form)).
 
 ## RoundCube
