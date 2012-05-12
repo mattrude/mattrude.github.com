@@ -20,7 +20,7 @@ do
     sed -i "/# $PAGENAME/c <div id=\"title\"><h1>mattrude.github.com <i>&mdash; </i>$PAGENAME</h1></div><p><a href=\"/\">mattrude.github.com</a> / <strong>$PAGENAME</strong></p>" readme.md && \
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
-    cat ../../footer.txt >> index.html
+    sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
     rm -f favicon.ico && cp ../../favicon.ico .
     rm -f style.css && cp ../../style.css .
     rm -f readme.md
@@ -32,9 +32,10 @@ done
 cd ../
 rm -rf projects
 
+echo "------ mattrude.github.com ------"
 rm -rf index.html
 INDEXNAME=`grep "^# " index.md |sed 's/^# //g'`
-sed "/###TITLE###/c $PAGENAME" header.txt > index.html && \
+sed "/###TITLE###/c $INDEXNAME" header.txt > index.html && \
 markdown index.md >> index.html && \
-cat footer.txt >> index.html
+sed "s/###SOURCE###/mattrude.github.com/g" footer.txt >> index.html
 git commit index.html -m "Webstie Update" && git push --all
