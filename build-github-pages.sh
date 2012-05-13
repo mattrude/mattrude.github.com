@@ -21,7 +21,7 @@ do
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
     sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
-    rm -f favicon.ico && cp ../../favicon.ico .
+    git rm favicon.ico
     rm -f style.css && cp ../../style.css .
     rm -f readme.md
     git add .
