@@ -21,7 +21,6 @@ do
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
     sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
-    git rm favicon.ico
     rm -f style.css && cp ../../style.css .
     rm -f readme.md
     git add .
@@ -30,7 +29,7 @@ do
     echo ""
 done
 cd ../
-#rm -rf projects
+rm -rf projects
 
 echo "------ mattrude.github.com ------"
 rm -rf index.html
