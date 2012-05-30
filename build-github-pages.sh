@@ -11,8 +11,11 @@ do
     rm -rf $project
     git clone git@github.com:mattrude/$project.git -q
     cd $project
-    git checkout --track -b gh-pages origin/gh-pages -q
-
+	if [ `git remote show origin |grep "gh-pages tracked" |wc -l` ]; then
+	    git checkout --track -b gh-pages origin/gh-pages -q
+	else
+	    git checkout gh-pages
+	fi
     rm -f index.html readme.md
     git show master:readme.md > readme.md && \
     PAGENAME=`head -2 readme.md |grep "^# " |sed 's/^# //g'`
