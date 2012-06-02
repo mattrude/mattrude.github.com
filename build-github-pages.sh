@@ -8,19 +8,24 @@ cd projects
 for project in `cat ../project-list`
 do
     echo "------ $project ------"
-    rm -rf $project
-    git clone git@github.com:mattrude/$project.git -q
-    cd $project
-	if [ `git remote show origin |grep "gh-pages tracked" |wc -l` ]; then
-	    git checkout --track -b gh-pages origin/gh-pages -q
+	if [ -d $project/.git ]; then
+		cd $project
+		git up
+		git checkout gh-pages
 	else
-	    git checkout gh-pages
+	    git clone git@github.com:mattrude/$project.git -q
+	    cd $project
+		if [ `git remote show origin |grep "gh-pages tracked" |wc -l` ]; then
+		    git checkout --track -b gh-pages origin/gh-pages -q
+		else
+		    git checkout gh-pages
+		fi
 	fi
     rm -f index.html readme.md
     git show master:readme.md > readme.md && \
     PAGENAME=`head -2 readme.md |grep "^# " |sed 's/^# //g'`
     sed "s/###TITLE###/$PAGENAME/g" ../../header.txt |sed "s/###SOURCE###/$project/g" > index.html && \
-    sed -i "/# $PAGENAME/c <div id=\"title\"><h1>gh.mattrude.com <i>&mdash; </i>$PAGENAME</h1></div><div id=\"breadcrums\"><p><a href=\"/\">gh.mattrude.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
+    sed -i "/# $PAGENAME/c <div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.mattrude.com</h1></div><div id=\"breadcrums\"><p><a href=\"/\">gh.mattrude.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
     sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
@@ -33,7 +38,6 @@ do
     echo ""
 done
 cd ../
-rm -rf projects
 
 echo "------ mattrude.github.com ------"
 rm -rf index.html
