@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>mattrude.github.com / Random Image Block plugin for WordPress</title>
+	<title>mattrude.github.com / ###TITLE###</title>
 	<link rel="stylesheet" type="text/css" href="./style.css" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
