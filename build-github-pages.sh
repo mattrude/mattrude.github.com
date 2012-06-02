@@ -19,7 +19,7 @@ do
     rm -f index.html readme.md
     git show master:readme.md > readme.md && \
     PAGENAME=`head -2 readme.md |grep "^# " |sed 's/^# //g'`
-    sed "s/###TITLE###/$PAGENAME/g" ../../header.txt > index.html && \
+    sed "s/###TITLE###/$PAGENAME/g" ../../header.txt |sed "s/###SOURCE###/$project/g" > index.html && \
     sed -i "/# $PAGENAME/c <div id=\"title\"><h1>mattrude.github.com <i>&mdash; </i>$PAGENAME</h1></div><div id=\"breadcrums\"><p><a href=\"/\">mattrude.github.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
