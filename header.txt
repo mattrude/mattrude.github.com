@@ -8,5 +8,5 @@
 	<link rel="icon" href="http://github.com/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-<div id="content">
-	<div id="primary" class="main">
+<div id="content"><div id="primary" class="main">
+<!-- Finished Header Section -->
