@@ -25,6 +25,7 @@ do
     cat ../../comments.txt >> index.html
     sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
     rm -f style.css && cp ../../style.css .
+	rm -f favicon.ico
     rm -f readme.md
     git add .
     git commit . -m "Webstie Update" && git push --all
