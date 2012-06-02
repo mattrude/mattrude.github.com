@@ -1,3 +1,4 @@
+	<!-- Starting Footer Section -->
     </div>
     <div id="footer">
         <div class="footer-left">
