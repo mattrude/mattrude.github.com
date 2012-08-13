@@ -13,24 +13,31 @@ do
 	if [ -d $project/.git ]; then
 		cd $project
 		git up
-        CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
-        if [ $CURRENTBRANCH != "gh-pages" ]; then
-		    git checkout gh-pages
-        fi
 	else
 	    git clone git@github.com:mattrude/$project.git -q
 	    cd $project
-		if [ `git remote show origin |grep "gh-pages tracked" |wc -l` ]; then
-		    git checkout --track -b gh-pages origin/gh-pages -q
-		else
-            CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
-            if [ $CURRENTBRANCH != "gh-pages" ]; then
-		        git checkout gh-pages
-            fi
-		fi
+	fi
+    GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
+	if [ "$GHPAGES" == "0" ]; then
+        echo "Branch gh-pages dose not exist, creating it"
+	    git checkout --track -b gh-pages origin/gh-pages -q
+	else
+        CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
+        if [ $CURRENTBRANCH != "gh-pages" ]; then
+            git checkout gh-pages
+        fi
 	fi
     rm -f index.html readme.md
-    git show master:readme.md > readme.md && \
+    LISTREADME1=`git ls-tree master: |grep readme.md |wc -l`
+    if [ "$LISTREADME1" == "1" ]; then
+        README="readme.md"
+    else
+        LISTREADME2=`git ls-tree master: |grep README.md |wc -l`
+        if [ "$LISTREADME2" == "1" ]; then
+            README="README.md"
+        fi
+    fi
+    git show master:$README > readme.md && \
     PAGENAME=`head -2 readme.md |grep "^# " |sed 's/^# //g'`
     sed "s/###TITLE###/$PAGENAME/g" ../../header.txt |sed "s/###SOURCE###/$project/g" > index.html && \
     sed -i "/# $PAGENAME/c <div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.mattrude.com</h1></div><div id=\"breadcrums\"><p><a href=\"/\">gh.mattrude.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
@@ -56,4 +63,8 @@ INDEXNAME=`grep "^# " index.md |sed 's/^# //g'`
 sed "/###TITLE###/c 	<title>$INDEXNAME</title>" header.txt > index.html && \
 markdown index.md >> index.html && \
 sed "s/###SOURCE###/mattrude.github.com/g" footer.txt >> index.html
-git commit index.html -m "Webstie Update" && git push --all
+REPOSTATUS=`git status -s |wc -l`
+if [ $REPOSTATUS != "0" ]; then
+    git commit index.html -m "Webstie Update"
+    git push --all
+fi
