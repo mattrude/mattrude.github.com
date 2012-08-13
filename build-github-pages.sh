@@ -17,16 +17,27 @@ do
 	    git clone git@github.com:mattrude/$project.git -q
 	    cd $project
 	fi
-    GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
-	if [ "$GHPAGES" == "0" ]; then
-        echo "Branch gh-pages dose not exist, creating it"
-	    git checkout --track -b gh-pages origin/gh-pages -q
-	else
+    GHPAGESLOCAL=`git branch |grep "gh-pages" |wc -l`
+    if [ $GHPAGESLOCAL == "1" ]; then
         CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
         if [ $CURRENTBRANCH != "gh-pages" ]; then
             git checkout gh-pages
         fi
-	fi
+    else
+        if [ "$GHPAGES" == "1" ]; then
+            git checkout --track -b gh-pages origin/gh-pages -q
+        else
+            GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
+            if [ "$GHPAGES" == "0" ]; then
+                echo "Branch gh-pages dose not exist, creating it"
+                git branch gh-pages
+                git checkout gh-pages
+            else
+                echo "Can't find gh-pages"
+                exit 1
+            fi
+        fi
+    fi
     rm -f index.html readme.md
     LISTREADME1=`git ls-tree master: |grep readme.md |wc -l`
     if [ "$LISTREADME1" == "1" ]; then
