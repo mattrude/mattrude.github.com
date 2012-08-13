@@ -2,6 +2,8 @@
 
 PAGENAME="WordPress Webmaster Tools Plugin"
 
+cd /root/mattrude.github.com
+
 mkdir -p projects
 cd projects
 
@@ -11,14 +13,20 @@ do
 	if [ -d $project/.git ]; then
 		cd $project
 		git up
-		git checkout gh-pages
+        CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
+        if [ $CURRENTBRANCH != "gh-pages" ]; then
+		    git checkout gh-pages
+        fi
 	else
 	    git clone git@github.com:mattrude/$project.git -q
 	    cd $project
 		if [ `git remote show origin |grep "gh-pages tracked" |wc -l` ]; then
 		    git checkout --track -b gh-pages origin/gh-pages -q
 		else
-		    git checkout gh-pages
+            CURRENTBRANCH=`git status |grep "# On branch " |awk '{print $4}'`
+            if [ $CURRENTBRANCH != "gh-pages" ]; then
+		        git checkout gh-pages
+            fi
 		fi
 	fi
     rm -f index.html readme.md
@@ -32,8 +40,11 @@ do
     rm -f style.css && cp ../../style.css .
 	rm -f favicon.ico
     rm -f readme.md
-    git add .
-    git commit . -m "Webstie Update" && git push --all
+    REPOSTATUS=`git status -s |wc -l`
+    if [ $REPOSTATUS != "0" ]; then
+        git add .
+        git commit . -m "Webstie Update" && git push --all
+    fi
     cd ../
     echo ""
 done
