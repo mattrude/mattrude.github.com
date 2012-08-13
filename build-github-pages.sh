@@ -66,6 +66,7 @@ do
     if [ $REPOSTATUS != "0" ]; then
         git add .
         git commit . -m "Website Update" && git push --all
+        twidge update "Updating github website for the $project repository, see: http://gh.mattrude.com/$project"
     fi
     cd ../
     echo ""
