@@ -26,12 +26,16 @@ do
     else
         if [ "$GHPAGES" == "1" ]; then
             git checkout --track -b gh-pages origin/gh-pages -q
+            git checkout -b gh-pages
         else
             GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
             if [ "$GHPAGES" == "0" ]; then
                 echo "Branch gh-pages dose not exist, creating it"
-                git branch gh-pages
-                git checkout gh-pages
+                git symbolic-ref HEAD refs/heads/gh-pages
+                rm .git/index
+                git clean -fdx
+                sleep 2
+                git push --all
             else
                 echo "Can't find gh-pages"
                 exit 1
@@ -61,7 +65,7 @@ do
     REPOSTATUS=`git status -s |wc -l`
     if [ $REPOSTATUS != "0" ]; then
         git add .
-        git commit . -m "Webstie Update" && git push --all
+        git commit . -m "Website Update" && git push --all
     fi
     cd ../
     echo ""
@@ -76,6 +80,6 @@ markdown index.md >> index.html && \
 sed "s/###SOURCE###/mattrude.github.com/g" footer.txt >> index.html
 REPOSTATUS=`git status -s |wc -l`
 if [ $REPOSTATUS != "0" ]; then
-    git commit index.html -m "Webstie Update"
+    git commit index.html -m "Website Update"
     git push --all
 fi
