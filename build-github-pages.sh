@@ -24,11 +24,12 @@ do
             git checkout gh-pages
         fi
     else
+        GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
         if [ "$GHPAGES" == "1" ]; then
+	    echo "Checking out gh-pages"
             git checkout --track -b gh-pages origin/gh-pages -q
             git checkout -b gh-pages
         else
-            GHPAGES=`git remote show origin |grep "gh-pages tracked" |wc -l`
             if [ "$GHPAGES" == "0" ]; then
                 echo "Branch gh-pages dose not exist, creating it"
                 git symbolic-ref HEAD refs/heads/gh-pages
