@@ -21,6 +21,7 @@ You my also view [My Repository](http://github.com/mattrude) on [Github.com](htt
 * **[Odin](/wp-theme-odin)** - Odin is a WordPress Child Theme of the [Coraline](http://theme.wordpress.com/themes/coraline/) theme, you must have Coraline installed for this child theme to work, you may download Coraline from the [WordPress Theme Directory](http://wordpress.org/extend/themes/coraline).
 * **[Milly](/wp-theme-milly)** - The old mattrude.com theme, used until July 2012.
 * **[Gus](/wp-theme-gus)** - The Current mattrude.com theme, with custom post-types & custom taxonomy.
+* **[Dark & Clear](/wp-theme-dark-and-clear)** - A now old theme for Wordpress from July 2009.
 
 ## RoundCube Plugins
 
