@@ -9,7 +9,7 @@ You my also view [My Repository](http://github.com/mattrude) on [Github.com](htt
 ## WordPress Plugins
 
 * **[Webmaster Tools](/wp-plugin-webmaster-tools)** - A WordPress plugin that provides webmaster site verification scripts for Google, Yahoo, & Bing. Plugin also provides Google Analytics Tracking Script for registered sites ([repository](https://github.com/mattrude/wp-plugin-webmaster-tools)).
-* **[Random Image Block](/random-image-block)** - A small plugin that will display a random image from your native WordPress photo galley or in-beaded images ([repositoryi](https://github.com/mattrude/random-image-block)).
+* **[Random Image Block](/random-image-block)** - A small plugin that will display a random image from your native WordPress photo galley or in-beaded images ([repository](https://github.com/mattrude/random-image-block)).
 * **[Sitemap Generator](/wp-plugin-sitemap-generator)** - Automatic generate standard XML sitemap (http://example.com/sitemap.xml) for WordPress that supports the providers including Google, Yahoo, MSN, Ask.com, and others ([repository](http://github.com/mattrude/wp-plugin-sitemap-generator)).
 * **[MDR Network](/mdr-network)** - This is a group of mostly small plugins needed for multi site installs. Most of these plugins only do one thing, but a few others add major updates to WordPress ([repository](https://github.com/mattrude/mdr-network)).
 * **[wp-Gallery Image Block](/wp-gallery2-image-block)** - This plugin for WordPress will allow you to put one of the many Gallery2 Image Blocks on your WordPress site. You are required to have a running Gallery2 install to use this plugin ([repository](http://github.com/mattrude/wp-gallery2-image-block)).
