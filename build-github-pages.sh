@@ -69,6 +69,7 @@ do
         git commit . -m "Website Update" && git push --all
         #twidge update "Updating github website for the $project repository, see: http://gh.mattrude.com/$project"
     fi
+    
     cd ../
     echo ""
 done
