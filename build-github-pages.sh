@@ -14,6 +14,7 @@ do
 		cd $project
 		git up
 	else
+        echo "$project not found, cloning it now."
 	    git clone git@github.com:mattrude/$project.git -q
 	    cd $project
 	fi
@@ -67,8 +68,9 @@ do
     if [ $REPOSTATUS != "0" ]; then
         git add .
         git commit . -m "Website Update" && git push --all
-        twidge update "Updating github website for the $project repository, see: http://gh.mattrude.com/$project"
+        #twidge update "Updating github website for the $project repository, see: http://gh.mattrude.com/$project"
     fi
+    
     cd ../
     echo ""
 done
