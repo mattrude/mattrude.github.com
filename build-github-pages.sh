@@ -1,9 +1,10 @@
 #!/bin/bash
 
 PAGENAME="WordPress Webmaster Tools Plugin"
-DIR="/root/mattrude.github.com"
+GITHUBUSER="mattrude"
+DIR="/root/$GITHUBUSER.github.com"
 
-cd /root/mattrude.github.com
+cd $DIR
 
 mkdir -p projects
 cd projects
@@ -16,7 +17,7 @@ do
 		git up
 	else
         echo "$project not found, cloning it now."
-	    git clone git@github.com:mattrude/$project.git -q
+	    git clone git@github.com:$GITHUBUSER/$project.git -q
 	    cd $project
 	fi
     GHPAGESLOCAL=`git branch |grep "gh-pages" |wc -l`
@@ -58,7 +59,7 @@ do
     git show master:$README > readme.md && \
     PAGENAME=`head -2 readme.md |grep "^# " |sed 's/^# //g'`
     sed "s/###TITLE###/$PAGENAME/g" ../../header.txt |sed "s/###SOURCE###/$project/g" > index.html && \
-    sed -i "/# $PAGENAME/c <div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.mattrude.com</h1></div><div id=\"breadcrums\"><p><a href=\"/\">gh.mattrude.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
+    sed -i "/# $PAGENAME/c <div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.$GITHUBUSER.com</h1></div><div id=\"breadcrums\"><p><a href=\"/\">gh.$GITHUBUSER.com</a> / <strong>$PAGENAME</strong></p></div>" readme.md && \
     markdown readme.md >> index.html && \
     cat ../../comments.txt >> index.html
     sed "s/###SOURCE###/$project/g" ../../footer.txt >> index.html
@@ -67,7 +68,13 @@ do
 	rm -f favicon.ico
     rm -f readme.md
 
-
+    if [ -d wiki ]; then
+        if [ -d git-wiki ]; then
+            cd git-wiki
+            git pull -q
+        else
+            git clone git@github.com:$GITHUBUSER/$project.wiki.git git-wiki -q
+        fi
         if [ -d git-wiki ]; then
             rm -rf wiki
             mkdir -p $DIR/projects/$project/wiki
@@ -83,28 +90,27 @@ do
                 cat $DIR/header.txt > $LDIR/index.html
                 PAGENAME=`echo $WIKI |sed 's/-/ /g'`
                 sed "s/###TITLE###/$PAGENAME/g" $DIR/header.txt |sed "s/###SOURCE###/$project/g" > $LDIR/index.html && \
-                echo "<div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.mattrude.com/$project</h1></div>" >> $LDIR/index.html && \
-                echo "<div id=\"breadcrums\"><p><a href=\"/\">gh.mattrude.com</a> / <a href=\"/$project\">$project</a> / wiki / <strong>$PAGENAME</strong></p></div>" >> $LDIR/index.html && \
+                echo "<div id=\"title\"><h1>$PAGENAME <i> &mdash; </i> gh.$GITHUBUSER.com/$project</h1></div>" >> $LDIR/index.html && \
+                echo "<div id=\"breadcrums\"><p><a href=\"/\">gh.$GITHUBUSER.com</a> / <a href=\"/$project\">$project</a> / wiki / <strong>$PAGENAME</strong></p></div>" >> $LDIR/index.html && \
                 markdown $WIKIMD >> $LDIR/index.html
                 cat $DIR/footer.txt >> $LDIR/index.html
-                sed -i "s/src=\"images/src=\"https:\/\/github.com\/mattrude\/$project\/wiki\/images/g" $LDIR/index.html
+                sed -i "s/src=\"images/src=\"https:\/\/github.com\/$GITHUBUSER\/$project\/wiki\/images/g" $LDIR/index.html
             done
             cd $DIR/projects/$project
             rm -rf git-wiki
-            mv index.html index.html-work && cat index.html-work |sed "s/https:\/\/github.com\/mattrude\/$project\/wiki\//http:\/\/gh.mattrude.com\/$project\/wiki\//g" > index.html && rm -f index.html-work
+            mv index.html index.html-work && cat index.html-work |sed "s/https:\/\/github.com\/$GITHUBUSER\/$project\/wiki\//http:\/\/gh.$GITHUBUSER.com\/$project\/wiki\//g" > index.html && rm -f index.html-work
 
             git add .
             git commit . -m "Adding/updating the Wiki pages to $project"
             git push
         fi
-
-
+    fi
 
     REPOSTATUS=`git status -s |wc -l`
     if [ $REPOSTATUS != "0" ]; then
         git add .
         git commit . -m "Website Update" && git push --all
-        #twidge update "Updating github website for the $project repository, see: http://gh.mattrude.com/$project"
+        #twidge update "Updating github website for the $project repository, see: http://gh.$GITHUBUSER.com/$project"
     fi
     
     cd ../
@@ -112,12 +118,12 @@ do
 done
 cd ../
 
-echo "------ mattrude.github.com ------"
+echo "------ $GITHUBUSER.github.com ------"
 rm -rf index.html
 INDEXNAME=`grep "^# " index.md |sed 's/^# //g'`
 sed "/###TITLE###/c 	<title>$INDEXNAME</title>" header.txt > index.html && \
 markdown index.md >> index.html && \
-sed "s/###SOURCE###/mattrude.github.com/g" footer.txt >> index.html
+sed "s/###SOURCE###/$GITHUBUSER.github.com/g" footer.txt >> index.html
 REPOSTATUS=`git status -s |wc -l`
 if [ $REPOSTATUS != "0" ]; then
     git commit . -m "Website Update"
