@@ -103,10 +103,6 @@ do
             cd $DIR/projects/$project
             rm -rf git-wiki
             mv index.html index.html-work && cat index.html-work |sed "s/https:\/\/github.com\/$GITHUBUSER\/$project\/wiki\//http:\/\/gh.$GITHUBUSER.com\/$project\/wiki\//g" > index.html && rm -f index.html-work
-
-            #git add .
-            #git commit . -m "Adding/updating the Wiki pages to $project"
-            #git push -q
         fi
     else
         rm -rf $DIR/projects/$project/git-wiki $DIR/projects/$project/wiki
@@ -120,12 +116,14 @@ do
         git add .
         git commit . -m "Website Update" && git push --all
         #twidge update "Updating github website for the $project repository, see: http://gh.$GITHUBUSER.com/$project"
+    else
+        echo "No changes found, no update needed"
     fi
     
     cd ../
     echo ""
 done
-cd ../
+cd $DIR
 
 echo "------ $GITHUBUSER.github.com ------"
 rm -rf index.html
@@ -133,8 +131,10 @@ INDEXNAME=`grep "^# " index.md |sed 's/^# //g'`
 sed "/###TITLE###/c 	<title>$INDEXNAME</title>" header.txt > index.html && \
 markdown index.md >> index.html && \
 sed "s/###SOURCE###/$GITHUBUSER.github.com/g" footer.txt >> index.html
-REPOSTATUS=`git status -s |wc -l`
-if [ $REPOSTATUS != "0" ]; then
-    git commit . -m "Website Update"
-    git push --all
+
+MAINREPOSTATUS=`git status -s |wc -l`
+if [ $MAINREPOSTATUS != "0" ]; then
+    echo "Committing changes to main repository:"
+    git commit . -m "Website Update" -q
+    git push --all -q
 fi
