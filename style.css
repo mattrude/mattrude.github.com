@@ -96,7 +96,7 @@ img {
     font-size: small;
 }
 
-pre {
+pre, pre code {
     font:0.85em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     width:auto;
     overflow:auto;
