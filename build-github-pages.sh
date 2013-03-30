@@ -68,7 +68,9 @@ do
 	rm -f favicon.ico
     rm -f readme.md
 
-    if [ -d wiki ]; then
+    HASWIKI=`curl -s https://api.github.com/repos/$GITHUBUSER/$project |grep "has_wiki" |awk '{print $2}' |sed 's/,//g'`
+    if [ $HASWIKI = "true" ]; then
+        cd $DIR/projects/$project/
         if [ -d git-wiki ]; then
             cd git-wiki
             git pull -q
@@ -104,6 +106,8 @@ do
             git commit . -m "Adding/updating the Wiki pages to $project"
             git push
         fi
+    else
+        rm -rf $DIR/projects/$project/git-wiki $DIR/projects/$project/wiki
     fi
 
     REPOSTATUS=`git status -s |wc -l`
