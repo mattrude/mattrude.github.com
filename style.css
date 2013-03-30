@@ -107,7 +107,7 @@ code {
 }
 
 pre {
-    font:0.85em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    font:14px Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     width:auto;
     overflow:auto;
     background-color:#eee;
