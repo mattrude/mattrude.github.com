@@ -97,7 +97,7 @@ img {
 }
 
 code {
-    font: 0.85em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    font: 1em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     margin: 0 2px;
     padding: 0px 5px;
     border: 1px solid #EAEAEA;
@@ -120,6 +120,7 @@ pre {
 pre code {
     border: none;
     white-space: pre;
+    background-color: #eee;
 }
 
 fieldset {
