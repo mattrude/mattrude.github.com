@@ -97,7 +97,7 @@ img {
 }
 
 code {
-    font: 1em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    font: Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     margin: 0 2px;
     padding: 0px 5px;
     border: 1px solid #EAEAEA;
@@ -107,7 +107,7 @@ code {
 }
 
 pre {
-    font:14px Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    font: Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     width:auto;
     overflow:auto;
     background-color:#eee;
