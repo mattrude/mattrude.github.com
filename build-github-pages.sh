@@ -70,11 +70,13 @@ do
 
     HASWIKI=`curl -s https://api.github.com/repos/$GITHUBUSER/$project |grep "has_wiki" |awk '{print $2}' |sed 's/,//g'`
     if [ $HASWIKI = "true" ]; then
+        echo "This project has a wiki; creating static wiki pages."
         cd $DIR/projects/$project/
         if [ -d git-wiki ]; then
             cd git-wiki
             git pull -q
         else
+            echo "  - No wiki directory found, creating new directory"
             git clone git@github.com:$GITHUBUSER/$project.wiki.git git-wiki -q
         fi
         if [ -d git-wiki ]; then
@@ -84,7 +86,7 @@ do
             cd git-wiki
             for WIKIMD in `ls *.md`
             do
-                echo "Working on page $WIKIMD"
+                echo "  - Building static page $WIKIMD"
                 WIKI=`echo $WIKIMD |sed 's/\.md//g'`
                 LDIR="$DIR/projects/$project/wiki/$WIKI"
                 rm -rf $LDIR
@@ -102,16 +104,19 @@ do
             rm -rf git-wiki
             mv index.html index.html-work && cat index.html-work |sed "s/https:\/\/github.com\/$GITHUBUSER\/$project\/wiki\//http:\/\/gh.$GITHUBUSER.com\/$project\/wiki\//g" > index.html && rm -f index.html-work
 
-            git add .
-            git commit . -m "Adding/updating the Wiki pages to $project"
-            git push
+            #git add .
+            #git commit . -m "Adding/updating the Wiki pages to $project"
+            #git push -q
         fi
     else
         rm -rf $DIR/projects/$project/git-wiki $DIR/projects/$project/wiki
     fi
 
+    cd $DIR/projects/$project
     REPOSTATUS=`git status -s |wc -l`
     if [ $REPOSTATUS != "0" ]; then
+        echo "Committing changes to repository:"
+        git checkout gh-pages -q
         git add .
         git commit . -m "Website Update" && git push --all
         #twidge update "Updating github website for the $project repository, see: http://gh.$GITHUBUSER.com/$project"
