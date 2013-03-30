@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PAGENAME="WordPress Webmaster Tools Plugin"
+DIR="/root/mattrude.github.com"
 
 cd /root/mattrude.github.com
 
