@@ -69,6 +69,11 @@ do
     rm -f readme.md
 
     HASWIKI=`curl -s https://api.github.com/repos/$GITHUBUSER/$project |grep "has_wiki" |awk '{print $2}' |sed 's/,//g'`
+    
+    if [ $HASWIKI != "true" ]; then
+        HASWIKI="false"
+    fi
+    
     if [ $HASWIKI = "true" ]; then
         echo "This project has a wiki; creating static wiki pages."
         cd $DIR/projects/$project/
