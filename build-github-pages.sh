@@ -31,7 +31,7 @@ do
         if [ "$GHPAGES" == "1" ]; then
 	    echo "Checking out gh-pages"
             git checkout --track -b gh-pages origin/gh-pages -q
-            git checkout -b gh-pages
+#            git checkout -b gh-pages
         else
             if [ "$GHPAGES" == "0" ]; then
                 echo "Branch gh-pages dose not exist, creating it"
