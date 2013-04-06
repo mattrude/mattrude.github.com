@@ -96,8 +96,18 @@ img {
     font-size: small;
 }
 
+code {
+    font: Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    margin: 0 2px;
+    padding: 0px 5px;
+    border: 1px solid #EAEAEA;
+    background-color: #F8F8F8;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
 pre {
-    font:0.85em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+    font: Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
     width:auto;
     overflow:auto;
     background-color:#eee;
@@ -107,9 +117,10 @@ pre {
     padding:1.2ex;
 }
 
-
-code {
-    font: 0.97em Monaco, Consolas, 'Lucida Console', "Droid Sans Mono", "DejaVu Sans Mono", Courier, monospace;
+pre code {
+    border: none;
+    white-space: pre;
+    background-color: #eee;
 }
 
 fieldset {
