@@ -14,6 +14,7 @@ You my also view [My Repository](http://github.com/mattrude) on [Github.com](htt
 * **[MDR Network](/mdr-network)** - This is a group of mostly small plugins needed for multi site installs. Most of these plugins only do one thing, but a few others add major updates to WordPress ([repository](https://github.com/mattrude/mdr-network)).
 * **[wp-Gallery Image Block](/wp-gallery2-image-block)** - This plugin for WordPress will allow you to put one of the many Gallery2 Image Blocks on your WordPress site. You are required to have a running Gallery2 install to use this plugin ([repository](http://github.com/mattrude/wp-gallery2-image-block)).
 * **[wp-reCAPTCHA-Form](/wp-recaptcha-form)** - A simple plugin for your WordPress blog that enables you to have a contact form with the [reCAPTCHA](http://www.google.com/recaptcha) challenge system ([repository](http://github.com/mattrude/wp-recaptcha-form)).
+* **[MDR Table of Contents](/wp-plugin-table-of-contents)** - A small plugin for WordPress that creates a Table of Contents shortcode ([repository](https://github.com/mattrude/wp-plugin-table-of-contents])).
 
 ## WordPress Themes
 
