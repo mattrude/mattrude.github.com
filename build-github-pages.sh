@@ -6,6 +6,8 @@ DIR="/root/$GITHUBUSER.github.com"
 
 cd $DIR
 
+git pull
+
 mkdir -p projects
 cd projects
 
