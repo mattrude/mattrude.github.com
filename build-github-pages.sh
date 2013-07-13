@@ -70,6 +70,8 @@ do
 	rm -f favicon.ico
     rm -f readme.md
 
+    HASWIKI="false"
+
     HASWIKI=`curl -s https://api.github.com/repos/$GITHUBUSER/$project |grep "has_wiki" |awk '{print $2}' |sed 's/,//g'`
     
     if [ $HASWIKI != "true" ]; then
