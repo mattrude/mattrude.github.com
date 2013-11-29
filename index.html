@@ -1,31 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- This page was created with the build-github-pages.sh script found at 
-	 https://github.com/mattrude/mattrude.github.com for 
-	 http://gh.mattrude.com -->
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Matt Rude's Github Projects</title>
-	<link rel="stylesheet" type="text/css" href="http://mattrude.github.com/style.css" />
-	<link rel="icon" href="http://gh.mattrude.com/favicon.ico" type="image/x-icon" />
-    <script type="text/javascript">
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-9532791-7']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-    </script>
-</head>
-<body>
-<div id="content"><div id="primary" class="main">
-<!-- Finished Header Section -->
+{% include header.html %}
+
 <h1>Matt Rude's Github Projects</h1>
 
 <p>Here are a few of the plugins for various applications I have published. All plugins are licensed under the GPLv2 so you are welcome to change them as you wish.</p>
@@ -61,16 +35,5 @@
 <ul>
 <li><strong><a href="/rc-plugin-fail2ban">RoundCube Fail2Ban Plugin</a></strong> - Is a small plugin that will display failed login attempts in your syslog or userlogins log file. Using this information <a href="http://www.fail2ban.org/">Fail2Ban</a> will be able to block a user for a set amount of time. The best part, the block is happening at the IP level and blocks the IP address, not the user they are trying to log in as (<a href="http://github.com/mattrude/rc-plugin-fail2ban">repository</a>).</li>
 </ul>
-		<!-- Starting Footer Section -->
-		<div id="footer">
-			<div class="footer-left">
-				<p><a href='/'>Home</a> | <a href='http://github.com/mattrude/'>Github Project List</a> | <a href='https://github.com/mattrude/mattrude.github.com'>Source</a> | <a href='https://github.com/mattrude/mattrude.github.com/issues'>Issues</a></p>
-			</div>
-			<div class="footer-right">
-				<p>Copyright &copy; 2009 &mdash; 2013 by <a href='http://mattrude.com'>Matt Rude</a></p>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
+
+{% include footer.html %}
