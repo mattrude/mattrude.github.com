@@ -30,9 +30,12 @@ overview: true
 {% endfor %}
 </ul>
 
-<h2>RoundCube Plugins</h2>
+<h2>Other Repositories</h2>
 
 <ul>
+{% for repo in site.data.other-repos %}
+<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="https://github.com/mattrude/{{ repo.uri }}">repository</a>).</li>
+{% endfor %}
 </ul>
 
 {% include footer.html %}
