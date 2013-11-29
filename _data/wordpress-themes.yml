@@ -1,0 +1,31 @@
+- uri: wp-theme-gus
+  name: Gus
+  description: The Current mattrude.com theme, with custom post-types & custom taxonomy.
+
+- uri: wp-theme-gus-twitter
+  name: Gus Twitter
+  description: The comapion theme to Gus.
+
+- uri: wp-theme-books
+  name: Books Theme
+  description: 
+
+- uri: wp-theme-milly
+  name: Milly
+  description: The old mattrude.com theme, used until July 2012.
+
+- uri: wp-theme-kirby
+  name: Kirby
+  description: Kirby is a WordPress Child Theme of the Twenty Eleven theme, bundled within WordPress 3.2 & WordPress 3.3. The Kirby Child Theme adds the following features to Twenty Eleven.
+
+- uri: wp-theme-odin
+  name: Odin
+  description: Odin is a WordPress Child Theme of the Coraline theme, you must have Coraline installed for this child theme to work, you may download Coraline from the WordPress Theme Directory.
+
+- uri: wp-theme-a-simple-blog
+  name: A Simple Blog
+  description: 
+
+- uri: wp-theme-dark-and-clear
+  name: Dark & Clear
+  description: The even older mattrude.com theme, used until July 2009.
