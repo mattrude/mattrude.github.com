@@ -1,27 +1,27 @@
-- name: wp-plugin-books
+- uri: wp-plugin-books
   description: 
 
-- name: wp-plugin-sitemap-generator
+- uri: wp-plugin-sitemap-generator
   description:
 
-- name: wp-plugin-webmaster-tools
+- uri: wp-plugin-webmaster-tools
   description:
 
-- name: wp-plugin-table-of-contents
+- uri: wp-plugin-table-of-contents
   description:
 
-- name: random-image-block
+- uri: random-image-block
   description:
 
-- name: top-posts-pages
+- uri: top-posts-pages
   description:
 
-- name: wp-gallery2-image-block
+- uri: wp-gallery2-image-block
   description:
 
-- name: wp-recaptcha-form
+- uri: wp-recaptcha-form
   description:
 
-- name: mdr-network
+- uri: mdr-network
   description:
 
