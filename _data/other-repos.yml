@@ -1,6 +1,6 @@
 - uri: time.mattrude.com
   name: time.mattrude.com
-  description: an archive of my old time.mattrude.com website.
+  description: An archive of my old time.mattrude.com website.
   
 - uri: rc-plugin-fail2ban
   name: Fail2ban RoundCube Plugin
