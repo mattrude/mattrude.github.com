@@ -6,7 +6,7 @@ overview: true
 
 {% include header.html %}
 
-<h1>{{ site.github.owner_name }}'s Github Projects</h1>
+<h1>Matt Rude's Github Projects</h1>
 
 <p>Here are a few of the plugins for various applications I have published. All plugins are licensed under the GPLv2 so you are welcome to change them as you wish.</p>
 
@@ -18,7 +18,7 @@ overview: true
 
 <ul>
 {% for repo in site.data.wordpress-themes %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -26,7 +26,7 @@ overview: true
 
 <ul>
 {% for repo in site.data.wordpress-plugins %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -34,7 +34,7 @@ overview: true
 
 <ul>
 {% for repo in site.data.other-repos %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
