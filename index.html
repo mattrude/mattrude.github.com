@@ -6,19 +6,19 @@ overview: true
 
 {% include header.html %}
 
-<h1>Matt Rude's Github Projects</h1>
+<h1>{{ site.github.owner_name }}'s Github Projects</h1>
 
 <p>Here are a few of the plugins for various applications I have published. All plugins are licensed under the GPLv2 so you are welcome to change them as you wish.</p>
 
 <p>If you need support, please leave a comment on the projects page.</p>
 
-<p>You my also view <a href="http://github.com/mattrude">My Repository</a> on <a href="http://github.com">Github.com</a>.</p>
+<p>You my also view <a href="{{ site.github.owner_url }}">My Repository</a> on <a href="http://github.com">Github.com</a>.</p>
 
 <h2>WordPress Themes</h2>
 
 <ul>
 {% for repo in site.data.wordpress-themes %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="https://github.com/mattrude/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -26,7 +26,7 @@ overview: true
 
 <ul>
 {% for repo in site.data.wordpress-plugins %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="https://github.com/mattrude/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -34,7 +34,7 @@ overview: true
 
 <ul>
 {% for repo in site.data.other-repos %}
-<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="https://github.com/mattrude/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
