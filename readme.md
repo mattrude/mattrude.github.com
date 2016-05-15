@@ -1,89 +1,40 @@
-# gh.github.com
-[![Build Status](https://travis-ci.org/mattrude/mattrude.github.com.svg?branch=master)](https://travis-ci.org/mattrude/mattrude.github.com)
+## arkadianriver.com
 
-Hydejack is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [hydejacked](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
+```sh
+✔ pushd new-site
+✔ human init new-site
+✔ human apply-design
+✔ human edit
+✔ human backup existing-site
+✔ human push new-site
+✔ human cherry-pick -from existing-site
+✔ human ditch existing-site
+✔ > Are you sure? n
+* human considers "meaning of life"
+  > "meaning of life" unknown.
+  human ditch existing-site --force=true
+  popd
+```
+### How to
 
-## Features
-Unlike Hyde, it's opinionated about how you are going to use it (as a blog!)
-Features included are:
+If you clone or fork this repository for your own, you'll want to..
 
-* Touch-enabled sidebar / drawer for mobile, including fallback when JS is disabled.
-* Github Pages compatible tag support based on [this post][tag].
-* Customizable link color and sidebar image, per-site, per-tag and per-post.
-* Optional author section at the bottom of each post.
-* Posts grouped by year on front and tag page.
-* Social media icons (github, twitter) on sidebar.
-* Optional comment section powered by Disqus.
-* Math blocks via [KaTeX](https://khan.github.io/KaTeX/).
+0. Edit the `_config.yml` file.
+1. Add a `_data/tokens.yml` file with your IDs & mail program.
+2. Add author info for yourself in `_data/authors.yml`.
+3. Provide your images and continue tweaking to your heart's desire, or not.
 
-## Download
+Use the posts in the 31st century as guides for yours. They're built by jekyll only when
+the `--future` option is used.
 
-Hydejack is developed on and hosted with GitHub. Head to the [GitHub repository](https://github.com/qwtel/hydejack) for downloads, bug reports, and feature requests.
+You can run `ruby compose.rb` to create new draft posts.
 
-## Sidebar
-I love the original Hyde theme, but unfortunately the layout isn't as great on small screens.
-Since the sidebar moves to the top, the user has to scroll just to read the title of a blog post.
+If you're building your site on Windows (like me) and you use WinSCP to sync with your
+remote site, you can use the `site.bat` file. Set up a `_site.env` file
+as described in the comments of `site.bat` and change the excludes list for your site.
 
-By using a drawer component I was able to retain the original two column layout. It's possible to move the drawer via touch input (with the help of a little JavaScript).
-
-Since the background image contributes to the feel of the page I'm letting it peek over the edge a bit. This also provides a hint to the user that an interaction is possible.
-
-## Manual
-
-### Configuration
-You can configure important aspects of the theme via [`_config.yml`](https://github.com/qwtel/hydejack/blob/master/_config.yml). This includes:
-
-* the blog description in the sidebar
-* the (optional) author description and photo
-* default image and link color of the blog
-* the github and twitter usernames
-
-### How to Change the Image and Color of a Post
-In the manifest of a blog post, simply add an url as `image` and a CSS color as `color`:
-
-~~~yml
-layout: post
-title: Introducing Hydejack
-image: http://qwtel.com/hydejack/public/img/hyde.jpg
-color: '#949667'
-~~~
-
-### How to Add a New Tag
-
-Tags are not meant to be used #instagram #style: #food #goodfood #happy #happylife #didimentionfood #yougetthepoint, as each tag requires some setup work. I tend to think of it as categories that can be combined.
-
-1.  Add an entry to `_data/tags.yml`, where the key represents a slug and provide at least a `name` value and optionally `image`, `color` and `description`.
-
-    Example `/_data/tags.yml`:
-
-    ~~~yml
-    mytag:
-      name: My Tag
-    ~~~
-
-2.  Make a new file in the `tag` folder, using the same name you've used as the key / slug and change the `tag` and `permalink` entries.
-
-    Example `/tag/mytag.md`:
-
-    ~~~yml
-    layout: blog_by_tag
-    tag: mytag
-    permalink: /tag/mytag/
-    ~~~
-
-3.  Tag your blog posts using the `tags` key (color and image will only depend on the first tag).
-
-    ~~~yml
-    layout: post
-    title: Introducing My New Tag
-    tags: [mytag, othertag]
-    ~~~
-
-4. (optional) Add the tag to the sidebar, by adding it to `sidebar_tags` in `_config.yml`.
-   They will appear in the listed order.
-
-   ~~~yml
-   sidebar_tags: [mytag, othertag]
-   ~~~
-
-[tag]: http://www.minddust.com/post/tags-and-categories-on-github-pages/
+`site dev` runs `jekyll serve --future --drafts` in development mode.  
+`site devnof` runs `jekyll serve --drafts` in development mode.  
+`site preview` runs `jekyll serve` in production mode.  
+`site prod` simply builds with `jekyll build` in production mode (no serve).  
+`site publish` uses WinSCP's `synchronize` feature to mirror to a remote site.
