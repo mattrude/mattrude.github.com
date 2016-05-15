@@ -1,4 +1,5 @@
-# Hydejack
+# gh.github.com
+[![Build Status](https://travis-ci.org/mattrude/mattrude.github.com.svg?branch=master)](https://travis-ci.org/mattrude/mattrude.github.com)
 
 Hydejack is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [hydejacked](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
 
