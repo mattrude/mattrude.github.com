@@ -16,10 +16,10 @@ description: Flowing creativity &#x2192; Cascading bliss
 owner:
   name: Matt RUde # or company name
   email: matt@mattrude.com
-  url: http://arkadianriver.com
-first_published: 1996 # if migrating another site, the year of your first publish
+  url: http://mattrude
+first_published: 2004 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://arkadianriver.com" # the base hostname & protocol for your site
+url: "http://mattrude.com" # the base hostname & protocol for your site
 
 # on landing page
 # - set the greeting only if you want to display the first green section
@@ -37,7 +37,7 @@ social:
   twitter: https://twitter.com/mdrude
   github: https://github.com/mattrude
   facebook-official: https://facebook.com/mattrude
-  google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
+  #google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
   email: /contact/
   #flickr:
   #instagram:
