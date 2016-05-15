@@ -3,7 +3,7 @@ permalink:        pretty
 # Setup
 url:              http://gh.mattrude.com
 # Set to '' in case of hosting on `http://<your-github-name>.github.io`
-baseurl:          /
+baseurl:          ""
 title:            Matt Rude
 
 # Markdown enabled, however don't use more than one paragraph (enforced by `>`)
