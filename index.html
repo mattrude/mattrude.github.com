@@ -1,41 +1,23 @@
 ---
 layout: default
-title: Matt Rude's Github Projects
-overview: true
+title: Blog
 ---
 
-{% include header.html %}
-
-<h1>Matt Rude's Github Projects</h1>
-
-<p>Here are a few of the plugins for various applications I have published. All plugins are licensed under the GPLv2 so you are welcome to change them as you wish.</p>
-
-<p>If you need support, please leave a comment on the projects page.</p>
-
-<p>You my also view <a href="{{ site.github.owner_url }}">My Repository</a> on <a href="http://github.com">Github.com</a>.</p>
-
-<h2>WordPress Themes</h2>
-
-<ul>
-{% for repo in site.data.wordpress-themes %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+{% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul><hr/>{% endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}" class="page-title">{{ currentdate }}</h2>
+    <ul class="related-posts">
+    {% assign date = currentdate %}
+  {% endif %}
+  <li>
+    <h4>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <span>{{ post.title }}</span>
+        <small>{{ post.date | date: "%m/%d" }}</small>
+      </a>
+    </h4>
+  </li>
+  {% if forloop.last %}</ul><hr/>{% endif %}
 {% endfor %}
-</ul>
-
-<h2>WordPress Plugins</h2>
-
-<ul>
-{% for repo in site.data.wordpress-plugins %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
-{% endfor %}
-</ul>
-
-<h2>Other Repositories</h2>
-
-<ul>
-{% for repo in site.data.other-repos %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
-{% endfor %}
-</ul>
-
-{% include footer.html %}

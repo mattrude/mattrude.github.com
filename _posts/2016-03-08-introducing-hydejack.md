@@ -1,4 +1,20 @@
-# Hydejack
+---
+layout: post
+title: Introducing Hydejack
+tags: [hyde]
+---
+
+<style>
+  .preview {
+    display: none;
+  }
+
+  @media (min-width: 48em) {
+    .preview {
+      display: block;
+    }
+  }
+</style>
 
 Hydejack is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [hydejacked](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
 
@@ -26,6 +42,11 @@ Since the sidebar moves to the top, the user has to scroll just to read the titl
 By using a drawer component I was able to retain the original two column layout. It's possible to move the drawer via touch input (with the help of a little JavaScript).
 
 Since the background image contributes to the feel of the page I'm letting it peek over the edge a bit. This also provides a hint to the user that an interaction is possible.
+
+### Preview
+{:.preview}
+
+<iframe class="preview" src="/hydejack/2016/03/08/introducing-hydejack/" style="border: 1px solid #ddd; width: 340px; height: 520px; margin-top: 1rem"></iframe>
 
 ## Manual
 
