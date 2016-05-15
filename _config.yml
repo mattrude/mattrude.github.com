@@ -14,7 +14,7 @@
 title: mattrude.com
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
-  name: Matt RUde # or company name
+  name: Matt Rude # or company name
   email: matt@mattrude.com
   url: http://mattrude
 first_published: 2004 # if migrating another site, the year of your first publish
@@ -25,7 +25,7 @@ url: "http://mattrude.com" # the base hostname & protocol for your site
 # - set the greeting only if you want to display the first green section
 greeting:
   title: Welcome!
-  text: I hope you enjoy my collection
+  text: Hey, my name is Matt Rude, I’m a System Administrator living in the Twin Cities, Minnesota. I have worked in Information Technology for over 18 years. During that time I have worked for business sectors as diverse as Public Schools to Auto Part to Health Care.
 # - title for your blog's featured posts
 features-title: Featured topics
 # - displayed at the bottom
