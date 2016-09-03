@@ -1,0 +1,35 @@
+- uri: wp-plugin-books
+  name: Books Plugin
+  description: 
+
+- uri: wp-plugin-sitemap-generator
+  name: Sitemap Generator
+  description:
+
+- uri: wp-plugin-webmaster-tools
+  name: Webmaster Tools
+  description: A WordPress plugin that provides webmaster site verification scripts for Google, Yahoo, & Bing. Plugin also provides Google Analytics Tracking Script for registered sites.
+
+- uri: wp-plugin-table-of-contents
+  name: Table of Contents
+  description: A small plugin for your WordPress blog that creates a Table of Contents shortcode.
+
+- uri: random-image-block
+  name: Random Image Block
+  description: A small plugin that will display a random image from your native WordPress photo galley or in-beaded images
+
+- uri: top-posts-pages
+  name: Top Posts & Pages
+  description:
+
+- uri: wp-gallery2-image-block
+  name: Gallery2 Random Image Block
+  description: This plugin for WordPress will allow you to put one of the many Gallery2 Image Blocks on your WordPress site. You are required to have a running Gallery2 install to use this plugin
+
+- uri: wp-recaptcha-form
+  name: reCAPTCHA form
+  description: A simple plugin for your WordPress blog that enables you to have a contact form with the reCAPTCHA challenge system
+
+- uri: mdr-network
+  name: MDR Network
+  description: This is a group of mostly small plugins needed for multi site installs. Most of these plugins only do one thing, but a few others add major updates to WordPress.
