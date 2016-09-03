@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Matt Rude's Github Projects
 ---
 
 Here are a few of the plugins for various applications I have published. All plugins are licensed under the GPLv2 so you are welcome to change them as you wish.
