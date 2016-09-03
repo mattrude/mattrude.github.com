@@ -1,7 +1,10 @@
 theme: minima
 title: "Matt Rude's Github Projects"
-author: mattrude
 description: "My collection of published projects"
+
+author: "Matt Rude"
+github_username: mattrude
+twitter_username: mdrude
 
 markdown: kramdown
 permalink: pretty
