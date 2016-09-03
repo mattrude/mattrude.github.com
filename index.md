@@ -12,7 +12,7 @@ You my also view <a href="{{ site.github.owner_url }}">My Repository</a> on [Git
 
 <ul>
 {% for repo in site.data.wordpress-themes %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.owner_url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -20,7 +20,7 @@ You my also view <a href="{{ site.github.owner_url }}">My Repository</a> on [Git
 
 <ul>
 {% for repo in site.data.wordpress-plugins %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.owner_url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
@@ -28,7 +28,7 @@ You my also view <a href="{{ site.github.owner_url }}">My Repository</a> on [Git
 
 <ul>
 {% for repo in site.data.other-repos %}
-<li><strong><a href="{{ site.github.url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
+<li><strong><a href="{{ site.github.owner_url }}/{{ repo.uri }}">{{ repo.name }}</a></strong> - {{ repo.description }} (<a href="{{ site.github.owner_url }}/{{ repo.uri }}">repository</a>)</li>
 {% endfor %}
 </ul>
 
